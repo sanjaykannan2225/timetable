@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BSC CT Time Table</title>
+
+    <style>
+        :root {
+            --bg: #f2f4f8;
+            --text: #000;
+            --card: #ffffff;
+            --accent: #0a3d62;
+        }
+
+        body.dark {
+            --bg: #0f172a;
+            --text: #e5e7eb;
+            --card: #1e293b;
+            --accent: #38bdf8;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* ===== COLLEGE HEADER ===== */
+        .college-header {
+            width: 95%;
+            margin: 20px auto;
+            background: var(--card);
+            border-left: 6px solid var(--accent);
+            padding: 15px 20px;
+            display: grid;
+            grid-template-columns: 90px auto;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .college-header img {
+            width: 80px;
+        }
+
+        .college-header h1 {
+            margin: 0;
+            font-size: 22px;
+            color: var(--accent);
+        }
+
+        .college-header p {
+            margin: 3px 0;
+            font-size: 14px;
+        }
+
+        /* ===== CONTROLS ===== */
+        .controls {
+            width: 95%;
+            margin: 10px auto;
+            text-align: right;
+        }
+
+        button {
+            padding: 8px 14px;
+            margin-left: 8px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            background: var(--accent);
+            color: white;
+            font-size: 13px;
+        }
+
+        /* ===== TABLE CARD ===== */
+        .table-card {
+            width: 95%;
+            margin: 20px auto;
+            background: var(--card);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        thead th {
+            background: var(--accent);
+            color: white;
+        }
+
+        .hour {
+            background: #e5e7eb;
+            font-weight: bold;
+        }
+
+        body.dark .hour {
+            background: #334155;
+        }
+
+        .day {
+            font-weight: bold;
+            background: #f1f5f9;
+        }
+
+        body.dark .day {
+            background: #1e293b;
+        }
+
+        /* ===== SUBJECT TAG STYLE ===== */
+        .tech { background: #dcfce7; }
+        .java { background: #dbeafe; }
+        .apt { background: #ffedd5; }
+        .math { background: #fee2e2; }
+        .eng { background: #fce7f3; }
+        .tam { background: #fef9c3; }
+        .lab { background: #ecfccb; font-weight: bold; }
+
+        body.dark .tech,
+        body.dark .java,
+        body.dark .apt,
+        body.dark .math,
+        body.dark .eng,
+        body.dark .tam,
+        body.dark .lab {
+            background: #334155;
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            button {
+                display: none;
+            }
+
+            .table-card {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            th, td {
+                background: white !important;
+                color: black;
+            }
+
+            .college-header {
+                border-left: 6px solid black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="college-header">
+    <img src="download (3).png" alt="College Seal">
+    <div>
+        <h1>Bharathidasan College of Arts & Science (BCAS) </h1>
+        <p>Affiliated to Bharathiar University</p>
+        <p>City – Erode| Phone: xxxxxx7536</p>
+    </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+    <button onclick="toggleTheme()">🌙 Light / Dark</button>
+    <button onclick="downloadPDF()">📄 PDF</button>
+</div>
+
+<h2 align="center">BSC Computer Technology – I Year</h2>
+
+<!-- TABLE -->
+<div class="table-card">
+<table>
+    <thead>
+        <tr>
+            <th>Day / Time</th>
+            <th>9.45 – 10.40</th>
+            <th>10.40 – 11.35</th>
+            <th>11.35 – 12.30</th>
+            <th>1.15 – 2.10</th>
+            <th>2.10 – 3.05</th>
+            <th>3.05 – 4.00</th>
+        </tr>
+    </thead>
+
+    <tr class="hour">
+        <th>Hour</th>
+        <th>1</th><th>2</th><th>3</th>
+        <th>4</th><th>5</th><th>6</th>
+    </tr>
+
+    <tr>
+        <th class="day">Monday</th>
+        <td colspan="2" class="tech">TECHNICAL SESSION</td>
+        <td class="java">OOPS WITH JAVA</td>
+        <td class="apt">APTITUDE</td>
+        <td class="math">DISCRETE MATHS</td>
+        <td class="math">DISCRETE MATHS</td>
+    </tr>
+
+    <tr>
+        <th class="day">Tuesday</th>
+        <td colspan="2" class="tech">TECHNICAL SESSION</td>
+        <td class="java">OFFICE AUTOMATION</td>
+        <td class="eng">NAAN MUDHALVAN</td>
+        <td class="math">DISCRETE MATHS</td>
+        <td class="math">DISCRETE MATHS</td>
+    </tr>
+
+    <tr>
+        <th class="day">Wednesday</th>
+        <td colspan="2" class="tech">TECHNICAL SESSION</td>
+        <td class="eng">ENGLISH II</td>
+        <td class="java">OOPS WITH JAVA</td>
+        <td class="tam">TAMIL II</td>
+        <td class="tam">TAMIL II</td>
+    </tr>
+
+    <tr>
+        <th class="day">Thursday</th>
+        <td colspan="2" class="tech">TECHNICAL SESSION</td>
+        <td class="java">COMMUNICATION</td>
+        <td class="tam">ELECTIVE</td>
+        <td class="java">COMMUNICATION</td>
+        <td class="java">OOPS WITH JAVA</td>
+    </tr>
+
+    <tr>
+        <th class="day">Friday</th>
+        <td colspan="2" class="tech">TECHNICAL SESSION</td>
+        <td class="java">OOPS WITH JAVA</td>
+        <td class="eng">ENGLISH II</td>
+        <td class="java">OFFICE AUTOMATION</td>
+        <td class="lab">JAVA LAB</td>
+    </tr>
+</table>
+</div>
+
+<script>
+    function toggleTheme() {
+        document.body.classList.toggle("dark");
+    }
+
+    function downloadPDF() {
+        window.print();
+    }
+</script>
+
+</body>
+</html>
